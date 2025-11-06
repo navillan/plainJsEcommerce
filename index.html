@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plain Javascript Ecommerce Site</title>
   <link rel="stylesheet" href="index.css">
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous">
+  </script>
 </head>
 <body>
 
@@ -20,8 +25,9 @@
       </div>
     </div>
     <div class="main-body-wrapper">
-      <div class="main-carousel-wrapper">
-        <div class="left-arrow">←</div>
+      <div class="main-carousel-wrapper" onmouseleave=resetCarousel()>
+        <div class="left-arrow" onclick=leftArrow()>←</div>
+        <div class="left-carousel-block"></div>
         <div class="carousel-frame">
           <div>1</div>
           <div>2</div>
@@ -29,8 +35,11 @@
           <div>4</div>
           <div>5</div>
           <div>6</div>
+          <div>7</div>
+          <div>8</div>
         </div>
-        <div class="right-arrow">→</div>
+        <div class="right-carousel-block"></div>
+        <div class="right-arrow" onclick=rightArrow()>→</div>
       </div>
       <div class="main-featured-item-cards">
         <div class="item-card">

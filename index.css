@@ -30,22 +30,65 @@ body {
 }
 
 .main-carousel-wrapper {
+  position: relative;
   margin: 20px auto;
-  max-width: 1200px;
+  width: 800px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  overflow: hidden;
   gap: 30px;
 }
 .left-arrow, .right-arrow {
+  position: absolute;
   cursor: pointer;
   user-select: none;
   padding: 0 15px;
   color: #333;
 }
+.left-arrow {
+  left: 15%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+.right-arrow {
+  right: 15%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.right-carousel-block, .left-carousel-block {
+  width: 150px;
+  height: 100px;
+  background-color: #f4f4f4;
+  position: absolute;
+  z-index: 1;
+}
+.left-carousel-block {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.right-carousel-block {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .carousel-frame {
   display: flex;
   gap: 20px;
-  overflow: hidden;
+}
+.carousel-frame div {
+  min-width: 100px;
+  min-height: 100px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .main-featured-item-cards {
