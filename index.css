@@ -45,23 +45,29 @@ body {
   user-select: none;
   padding: 0 15px;
   color: #333;
+  font-size: 20px;
+  transition: all 0.2s ease;
+}
+.left-arrow:hover, .right-arrow:hover {
+  text-shadow: rgb(27, 27, 27) 0 0 3px;
+  font-size: 26px;
 }
 .left-arrow {
-  left: 15%;
+  left: 2%;
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
 }
 .right-arrow {
-  right: 15%;
+  right: 2%;
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
 }
 
 .right-carousel-block, .left-carousel-block {
-  width: 150px;
-  height: 100px;
+  width: 70px;
+  height: 250px;
   background-color: #f4f4f4;
   position: absolute;
   z-index: 1;
@@ -80,15 +86,59 @@ body {
 .carousel-frame {
   display: flex;
   gap: 20px;
+  pointer-events: none;
+  transition: all 0.5s ease;
 }
-.carousel-frame div {
-  min-width: 100px;
-  min-height: 100px;
+.item-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
   background-color: #fff;
   border: 1px solid #ddd;
-  padding: 10px;
+  border-radius: 4px;
+  padding: 8px;
   box-sizing: border-box;
   text-align: center;
+}
+.item-rating {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #ffcc00;
+  font-size: 10px;
+}
+.item-image {
+  width: 60px;
+  height: 60px;
+  background-size: cover;
+  background-position: center;
+  background-color: #cccccc;
+  margin: 8px auto 10px auto;
+}
+.item-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+.item-description {
+  display: -webkit-box;
+  font-size: 12px;
+  color: #555;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.2em;
+  max-height: calc(1.2em * 3);
+  pointer-events: none;
+}
+.item-price {
+  font-size: 14px;
+  color: #e91e63;
+  margin-top: auto;
+  font-weight: bold;
 }
 
 .main-featured-item-cards {
@@ -97,6 +147,18 @@ body {
   justify-content: center;
   border: 1px solid #ddd;
   padding: 0 10px 0 10px;
+}
+.product-item-route {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 8px;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 .main-footer-wrapper {

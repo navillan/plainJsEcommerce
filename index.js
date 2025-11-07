@@ -1,21 +1,52 @@
-const carouselMain = $('.carousel-frame');
+//dummy product data
+let products = [];
+$.ajax({
+  url: "https://dummyjson.com/products",
+  method: "GET",
+  success: (data) => {
+    products = data.products;
+    products.forEach((item) => {
+    $carouselMain.append(`<div class="item-card">
+       <div class="item-rating">★${item.rating}</div>
+       <div class="item-image" style="background-image: url('${item.thumbnail}')"></div>
+       <div class="item-title">${item.title}</div>
+       <div class="item-price">$${item.price}</div>
+      </div>`);
+  });
+  },
+  error: (error) => {
+    console.error("API error:", error);
+  }
+});
+
+
+
+//Carousel
+const $carouselMain = $('.carousel-frame');
 let currentOffset = 0;
-const moveAmount = 120;
+const moveAmount = 160;
 
 function updateCarousel() {
-  carouselMain.css('transform', `translateX(${currentOffset}px)`);
+  $carouselMain.css('transform', `translateX(${currentOffset}px)`);
 }
 
 function leftArrow() {
   currentOffset += moveAmount;
+  if(currentOffset > 2080) {
+    currentOffset = -2080;
+  }
   updateCarousel();
 }
 
 function rightArrow() {
   currentOffset -= moveAmount;
+  if(currentOffset < -2080) {
+    currentOffset = 2080;
+  }
   updateCarousel();
 }
 
 function resetCarousel() {
-  carouselMain.css('transform', `translateX(0)`);
+  currentOffset = 0;
+  $carouselMain.css('transform', `translateX(0)`);
 }
