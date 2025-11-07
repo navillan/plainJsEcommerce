@@ -1,10 +1,10 @@
+
 //dummy product data
-let products = [];
 $.ajax({
   url: "https://dummyjson.com/products",
   method: "GET",
   success: (data) => {
-    products = data.products;
+    const products = data.products;
     products.forEach((item) => {
     $carouselMain.append(`<div class="item-card">
        <div class="item-rating">★${item.rating}</div>

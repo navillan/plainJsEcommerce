@@ -23,7 +23,7 @@
   self.init = () => {
     !window.jQuery ? 
       self.loadJquery() :
-      (self.onreset(), self.buildCss(), self.buildHtml(), self.setEvents())
+      (self.onreset(), self.buildCss(), self.buildCarouselHtml(), self.carouselEvents())
   };
 
   self.loadJquery = () => {
@@ -42,7 +42,19 @@
 
   self.buildCss = () => {
      const { style } = classes;
-     const { mainCarouselWrapper, leftArrow, rightArrow, leftCarouselBlock, rightCarouselBlock, carouselFrame, itemCard, itemRating, itemImage, itemTitle, itemPrice } = selectors;
+     const { 
+      mainCarouselWrapper, 
+      leftArrow, 
+      rightArrow, 
+      leftCarouselBlock, 
+      rightCarouselBlock, 
+      carouselFrame, 
+      itemCard, 
+      itemRating, 
+      itemImage, 
+      itemTitle, 
+      itemPrice 
+    } = selectors;
 
 
     const customStyle = `
@@ -152,7 +164,7 @@
     $("head").append(customStyle)
   }
 
-  self.buildHtml = () => {
+  self.buildCarouselHtml = () => {
     const {
       mainCarouselWrapper,
       leftArrow,
@@ -173,14 +185,13 @@
     $("body").append(carouselHtml);
   }
 
-  self.setEvents = () => {
+  self.carouselEvents = () => {
     //dummy product data
-    let products = [];
     $.ajax({
       url: "https://dummyjson.com/products",
       method: "GET",
       success: (data) => {
-        products = data.products;
+        const products = data.products;
         products.forEach((item) => {
         $(".carousel-frame").append(`<div class="item-card">
           <div class="item-rating">★${item.rating}</div>
