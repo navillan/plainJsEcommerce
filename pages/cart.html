@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Plain Javascript Ecommerce Site</title>
   <link rel="stylesheet" href="/styles/index.css">
+  <link rel="stylesheet" href="/styles/cart.css">
   <script
     src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
@@ -16,7 +17,7 @@
 
   <div class="main-wrapper">
     <div class="main-header-wrapper">
-      <h2>Js Ecommerce Site</h2>
+      <h2>My Cart</h2>
       <div class="nav-bar-wrapper">
         <a href="/">Home</a>
         <a href="/pages/products.html">Products</a>
@@ -24,22 +25,14 @@
         <a href="/pages/cart.html">Cart</a>
       </div>
     </div>
-    <div class="main-body-wrapper">
-      <div class="main-carousel-wrapper" onmouseleave=resetCarousel()>
-        <div class="left-arrow" onclick=leftArrow()>←</div>
-        <div class="left-carousel-block"></div>
-        <div class="carousel-frame"></div>
-        <div class="right-carousel-block"></div>
-        <div class="right-arrow" onclick=rightArrow()>→</div>
-      </div>
-      <div class="main-featured-item-cards">
-      </div>
+    <div class="main-body-wrapper-cart">
+      <div class="cart-items-wrapper"></div>
     </div>
     <div class="main-footer-wrapper">
       <p>&copy; 2025 Plain Javascript Ecommerce Site by Mert Selamlar.</p>
     </div>
   </div>
 
-  <script src="/scripts/index.js" ></script>
+  <script src="/scripts/cart.js" ></script>  
 </body>
 </html>
