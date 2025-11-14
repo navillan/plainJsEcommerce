@@ -1,4 +1,4 @@
-
+const myCard = JSON.parse(localStorage.getItem('cart')) || [];
 //dummy product data
 $.ajax({
   url: "https://dummyjson.com/products",
