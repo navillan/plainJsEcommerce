@@ -2,6 +2,9 @@
 
 .product-nav-bar {
   display: flex;
+  position: sticky;
+  top: 4%;
+  z-index: 10;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
